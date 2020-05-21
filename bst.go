@@ -1,5 +1,5 @@
 // A simple implementation of a binary search tree in go
-// This package is just a simple way to use binaries search tries. For the moment this package can only work with integers
+// This package is just a simple way to use binaries search trees. For the moment this package can only work with integers
 package bst
 
 import (
