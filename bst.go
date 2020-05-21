@@ -84,6 +84,7 @@ func OrderFunc(this *Node) {
 }
 
 func (this *Node) Sort() []int {
+	res = nil // Clear The array before use it
 	OrderFunc(this)
 	return res
 }
