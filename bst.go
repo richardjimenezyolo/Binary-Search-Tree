@@ -83,7 +83,7 @@ func OrderFunc(this *Node) {
 	OrderFunc(this.Right)
 }
 
-func (this *Node) Order() []int {
+func (this *Node) Sort() []int {
 	OrderFunc(this)
 	return res
 }
