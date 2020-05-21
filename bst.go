@@ -76,15 +76,15 @@ var res []int
 // Returns an array with the sorted Tree
 func (this *Node) Sort() []int {
 	res = nil // Clear The array before use it
-	OrderFunc(this)
+	sortFunc(this)
 	return res
 }
 
-func OrderFunc(this *Node) {
+func sortFunc(this *Node) {
 	if this == nil {
 		return
 	}
-	OrderFunc(this.Left)
+	sortFunc(this.Left)
 	res = append(res, this.val)
-	OrderFunc(this.Right)
+	sortFunc(this.Right)
 }
