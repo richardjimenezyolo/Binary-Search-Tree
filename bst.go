@@ -72,11 +72,18 @@ func (t Node) GetNode(n int) int {
 }
 
 // Order The Tree
-func (this *Node) Order() {
+var res []int
+
+func OrderFunc(this *Node) {
 	if this == nil {
 		return
 	}
-	this.Left.Order()
-	fmt.Println(this.val)
-	this.Right.Order()
+	OrderFunc(this.Left)
+	res = append(res, this.val)
+	OrderFunc(this.Right)
+}
+
+func (this *Node) Order() []int {
+	OrderFunc(this)
+	return res
 }
