@@ -71,8 +71,14 @@ func (t Node) GetNode(n int) int {
 	return t.GetNode(n)
 }
 
-// Order The Tree
 var res []int
+
+// Returns an array with the sorted Tree
+func (this *Node) Sort() []int {
+	res = nil // Clear The array before use it
+	OrderFunc(this)
+	return res
+}
 
 func OrderFunc(this *Node) {
 	if this == nil {
@@ -81,10 +87,4 @@ func OrderFunc(this *Node) {
 	OrderFunc(this.Left)
 	res = append(res, this.val)
 	OrderFunc(this.Right)
-}
-
-func (this *Node) Sort() []int {
-	res = nil // Clear The array before use it
-	OrderFunc(this)
-	return res
 }
