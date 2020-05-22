@@ -90,3 +90,19 @@ func sortFunc(this *Node) {
 	res = append(res, this.val)
 	sortFunc(this.Right)
 }
+
+// Returns an array with the INVERSE sorted Tree
+func (this *Node) SortInv() []int {
+	res = nil // Clear The array before use it
+	sortFuncInv(this)
+	return res
+}
+
+func sortFuncInv(this *Node) {
+	if this == nil {
+		return
+	}
+	sortFuncInv(this.Right)
+	res = append(res, this.val)
+	sortFuncInv(this.Left)
+}

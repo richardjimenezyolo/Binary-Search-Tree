@@ -1,9 +1,7 @@
 # Binary Search Tree Package for the Golang programing language
 A simple implementation of a binary search tree in go
 
-This package is just a simple way to use binaries search trees. For the moment this package can only work with integers 
-
-[![GoDoc](https://godoc.org/github.com/richardjimenezyolo/bst?status.svg)](https://godoc.org/github.com/richardjimenezyolo/bst)
+This package is just a simple way to use binaries search tries. For the moment this package can only work with integers 
 
 ## Create a Tree
 ```golang
