@@ -25,5 +25,15 @@ BigNumber := Tree.GetMax()
 
 ## Get the tree sorted
 ```golang
-sort := Tree.Sort() // Return an array
+sort := Tree.Sort() // Return a sorted array
+```
+
+## Get the tree sorted backwards
+```golang
+SortInv := Tree.SortInv() // returns a sorted array but backwards
+```
+
+## Check if a node exist in the tree
+```golang
+check := Tree.Check(2) //Instead of 2 you can use any number you want
 ```
