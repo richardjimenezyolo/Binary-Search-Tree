@@ -3,6 +3,8 @@ A simple implementation of a binary search tree in go
 
 This package is just a simple way to use binaries search trees. For the moment this package can only work with integers 
 
+[![GoDoc](https://godoc.org/github.com/richardjimenezyolo/bst?status.svg)](https://godoc.org/github.com/richardjimenezyolo/bst)
+
 ## Create a Tree
 ```golang
 var Tree bst.Node;
