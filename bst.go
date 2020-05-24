@@ -5,29 +5,29 @@ package bst
 // Node Structure
 type Node struct {
 	Left  *Node
-	val   int
+	Val   int
 	Right *Node
 }
 
 // Insert number into the Tree
 func (t *Node) Insert(n int) error {
 	// If the Node is Empty
-	if t.val == 0 {
-		t.val = n
+	if t.Val == 0 {
+		t.Val = n
 	}
 	// Left
-	if t.val > n {
+	if t.Val > n {
 		if t.Left == nil {
-			t.Left = &Node{val: n}
+			t.Left = &Node{Val: n}
 			return nil
 		}
 
 		return t.Left.Insert(n)
 	}
 	// Right
-	if t.val < n {
+	if t.Val < n {
 		if t.Right == nil {
-			t.Right = &Node{val: n}
+			t.Right = &Node{Val: n}
 			return nil
 		}
 		return t.Right.Insert(n)
@@ -38,7 +38,7 @@ func (t *Node) Insert(n int) error {
 // Get The Smallest Number
 func (t *Node) GetMin() int {
 	if t.Left == nil {
-		return t.val
+		return t.Val
 	}
 	return t.Left.GetMin()
 }
@@ -46,7 +46,8 @@ func (t *Node) GetMin() int {
 // Get The Biggest Number
 func (t *Node) GetMax() int {
 	if t.Right == nil {
-		return t.val
+
+		return t.Val
 	}
 
 	return t.Right.GetMax()
@@ -54,63 +55,61 @@ func (t *Node) GetMax() int {
 
 // Get A Certain Node
 func (t Node) GetNode(n int) int {
-	if t.val == n {
+	if t.Val == n {
 		return n
 	}
-	if n > t.val {
+	if n > t.Val {
 		return t.Right.GetNode(n)
 	}
-	if n < t.val {
+	if n < t.Val {
 		return t.Left.GetNode(n)
 	}
 	return t.GetNode(n)
 }
 
-var res []int
-
 // Returns an array with the sorted Tree
 func (this *Node) Sort() []int {
-	res = nil // Clear The array before use it
-	sortFunc(this)
+	var res []int
+	this.srt(&res)
 	return res
 }
 
-func sortFunc(this *Node) {
+func (this *Node) srt(res *[]int) {
 	if this == nil {
 		return
 	}
-	sortFunc(this.Left)
-	res = append(res, this.val)
-	sortFunc(this.Right)
+	this.Left.srt(res)
+	*res = append(*res, this.Val)
+	this.Right.srt(res)
 }
 
 // Returns an array with the INVERSE sorted Tree
 func (this *Node) SortInv() []int {
-	res = nil // Clear The array before use it
-	sortFuncInv(this)
+	var res []int
+	this.srtInv(&res)
 	return res
 }
 
-func sortFuncInv(this *Node) {
+func (this *Node) srtInv(res *[]int) {
 	if this == nil {
 		return
 	}
-	sortFuncInv(this.Right)
-	res = append(res, this.val)
-	sortFuncInv(this.Left)
+	this.Right.srtInv(res)
+	*res = append(*res, this.Val)
+	this.Left.srtInv(res)
 }
 
 // Check if a node exist. It returns a bool
 func (this Node) Check(n int) bool {
-	if this.val == n {
+	if this.Val == n {
 		return true
 	}
-	if n > this.val {
+	if n > this.Val {
 		if this.Right != nil {
 			return this.Right.Check(n)
 		}
 	}
-	if n < this.val {
+	if n < this.Val {
 		if this.Left != nil {
 			return this.Left.Check(n)
 		}
