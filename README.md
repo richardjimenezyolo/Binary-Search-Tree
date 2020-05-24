@@ -15,7 +15,7 @@ Tree.Insert(2) // Instead of 2 you can use any number you want
 
 ## Remove elements from the Tree
 ```golang
-Tree.Remove(5) // Instead of 11 you can use any number you want
+Tree.Remove(5) // Instead of 5 you can use any number you want
 ```
 
 ## Get the smallest number
