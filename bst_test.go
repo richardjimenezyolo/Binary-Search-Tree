@@ -68,3 +68,20 @@ func TestGetMax(t *testing.T) {
 		t.Errorf("Error at GetMax")
 	}
 }
+
+// Remove Test
+func TestRemove(t *testing.T) {
+	sort_before := Tree.Sort()
+	Tree.Remove(11)
+	sort_after := Tree.Sort()
+
+	if len(sort_before) == len(sort_after) {
+		t.Errorf("ERROR AT Remove, BOTH LIST HAVE THE SAME AMOUNT OF ELEMENTS")
+	}
+
+	for _, i := range sort_after {
+		if i == 11 {
+			t.Errorf("ELEMENTS STILL IN THE Tree AFTER Remove")
+		}
+	}
+}

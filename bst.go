@@ -116,3 +116,18 @@ func (this Node) Check(n int) bool {
 	}
 	return false
 }
+
+// Remove an element from the Tree
+func (this *Node) Remove(n int) {
+	var res []int
+	sort := this.Sort()
+	for _, i := range sort {
+		if i != n {
+			res = append(res, i)
+		}
+	}
+	*this = Node{}
+	for _, i := range res {
+		this.Insert(i)
+	}
+}
